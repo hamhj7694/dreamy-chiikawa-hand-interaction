@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="손동작으로 치이카와 팬아트 파티클을 소환하는 웹캠 AI 인터랙션" />
+  <title>드리미 | 치이카와 손동작 인터랙션</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="p5.js"></script>
+  <script src="ml5.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="info-panel" aria-label="체험 안내">
+      <div class="badge">DREAMY / FAN-MADE INTERACTIVE ART</div>
+      <h1>손끝에서 피어나는<br/>작은 친구들 ✨</h1>
+      <p>카메라 사용을 허용하고 손모양을 보여주세요. 손의 랜드마크를 추정해 파티클 캐릭터로 바꿔주는 팬메이드 AI 인터랙션입니다.</p>
+      <div class="gesture-list" aria-label="손동작별 효과">
+        <div><b>✊ 주먹</b><span>치이카와 등장</span></div>
+        <div><b>✌️ V / 브이</b><span>우사기 등장</span></div>
+        <div><b>🤘 검지·새끼 펼침</b><span>하치와레 등장</span></div>
+        <div><b>✋ 손바닥 펼침</b><span>파자마파티즈 등장</span></div>
+        <div><b>👋 손을 화면 밖으로</b><span>파티클 흩어짐</span></div>
+        <div><b>⌨️ R 키</b><span>전체 초기화</span></div>
+      </div>
+      <button id="reset" type="button">↺ 처음부터 다시 시작 (R)</button>
+      <p class="hint">초기화 후에는 손을 잠시 화면 밖으로 뺐다가 다시 보여주세요. 한 손을 카메라 정면에 두면 인식이 더 안정적입니다.</p>
+      <div class="nav"><a href="portfolio.html">프로젝트 포트폴리오 ↗</a><a href="https://github.com/new" target="_blank" rel="noreferrer">GitHub 배포 안내 ↗</a></div>
+      <p class="disclaimer">비공식 팬 프로젝트 · 치이카와 원작자 및 공식 권리자와 무관합니다. 캐릭터 이미지의 저작권은 각 권리자에게 있습니다.</p>
+    </section>
+    <section class="stage-panel" aria-label="AI 인터랙션 카메라 화면"><div id="canvas-container"></div><p class="stage-caption">📷 카메라 권한이 필요합니다 · HTTPS / localhost 권장</p></section>
+  </main>
+  <script src="sketch.js"></script>
+  <script>document.getElementById('reset').addEventListener('click',()=>{if(typeof resetExperience==='function') resetExperience()});</script>
+</body>
+</html>
